@@ -1,0 +1,25 @@
+0000000000000000000000000000000000000000 deb36a870bcf32b4e0c2be2a83f1a9a853919619 suhdonghwi <hwidongsuh@gmail.com> 1675494600 +0900	commit (initial): initial commit
+deb36a870bcf32b4e0c2be2a83f1a9a853919619 e3520e1d94e7c7587f5f597818b8a0be9c5d0bdd suhdonghwi <hwidongsuh@gmail.com> 1675495338 +0900	commit: add .gitignore
+e3520e1d94e7c7587f5f597818b8a0be9c5d0bdd dea2ea5c5f6694b1b42d15201eb1b30c0d63c4c5 suhdonghwi <hwidongsuh@gmail.com> 1675495383 +0900	commit: amend .gitignore
+dea2ea5c5f6694b1b42d15201eb1b30c0d63c4c5 da03aeb62f2fad7992638558dbef5ec4798dd85c suhdonghwi <hwidongsuh@gmail.com> 1675846666 +0900	commit: Remove bufferline
+da03aeb62f2fad7992638558dbef5ec4798dd85c 5cd40692564146c4317d9183bcb4916886a26b84 suhdonghwi <hwidongsuh@gmail.com> 1675847403 +0900	commit: Add telescope buffers shortcut
+5cd40692564146c4317d9183bcb4916886a26b84 09f1549d5fcafeba684e9e02ef26bfcd77e39ed3 suhdonghwi <hwidongsuh@gmail.com> 1675848790 +0900	commit: Add diffview shortcut
+09f1549d5fcafeba684e9e02ef26bfcd77e39ed3 35db530ce56858fc124b57c2857abae3450cfd69 suhdonghwi <hwidongsuh@gmail.com> 1677817404 +0900	commit: Change sumneko_lua to lua_ls
+35db530ce56858fc124b57c2857abae3450cfd69 6c86c12e2fa943b98e300066461b81088e8382e0 suhdonghwi <hwidongsuh@gmail.com> 1679073744 +0900	commit: 2023-03-18
+6c86c12e2fa943b98e300066461b81088e8382e0 565b3a99b5500fd31b32ccdc3fdc9cf787152bd2 suhdonghwi <hwidongsuh@gmail.com> 1684472658 +0900	commit: Update
+565b3a99b5500fd31b32ccdc3fdc9cf787152bd2 18ca1c79b63f3696c40d51896348504fc2e92baf suhdonghwi <hwidongsuh@gmail.com> 1686254583 +0900	commit: Update
+18ca1c79b63f3696c40d51896348504fc2e92baf 3afb5371cc1716de998feb008470b5b407034328 suhdonghwi <hwidongsuh@gmail.com> 1686328138 +0900	commit: Update
+3afb5371cc1716de998feb008470b5b407034328 6886dc17709f8920c757d771b2157b11651db499 suhdonghwi <hwidongsuh@gmail.com> 1686329804 +0900	commit: Migrate from packer to lazy
+6886dc17709f8920c757d771b2157b11651db499 2d94915a7dae7d064623842494c7913b7c529a35 suhdonghwi <hwidongsuh@gmail.com> 1686837722 +0900	commit: Better heirline config
+2d94915a7dae7d064623842494c7913b7c529a35 9506fb83dbc2148f356a03c4636c788bd3f30530 suhdonghwi <hwidongsuh@gmail.com> 1687158411 +0900	commit: Update
+9506fb83dbc2148f356a03c4636c788bd3f30530 d66d9905174a4622e84a175f28936f86e9d110c4 suhdonghwi <hwidongsuh@gmail.com> 1687403276 +0900	commit: migrate to flash.nvim
+d66d9905174a4622e84a175f28936f86e9d110c4 a9e43f333245fc40b7a65c262f3e90c737882f7f suhdonghwi <hwidongsuh@gmail.com> 1688888068 +0900	commit: heirline git branch name, etc.
+a9e43f333245fc40b7a65c262f3e90c737882f7f c86e069f68a599f0ed4c680ae2d9325066c628ab suhdonghwi <hwidongsuh@gmail.com> 1692624163 +0900	commit: update
+c86e069f68a599f0ed4c680ae2d9325066c628ab 0d758f169bd8f48b1f4c19855693b66b40fa0d33 suhdonghwi <hwidongsuh@gmail.com> 1692624171 +0900	commit: update
+0d758f169bd8f48b1f4c19855693b66b40fa0d33 0d758f169bd8f48b1f4c19855693b66b40fa0d33 suhdonghwi <hwidongsuh@gmail.com> 1692638070 +0900	checkout: moving from main to test
+0d758f169bd8f48b1f4c19855693b66b40fa0d33 0d758f169bd8f48b1f4c19855693b66b40fa0d33 suhdonghwi <hwidongsuh@gmail.com> 1692638077 +0900	checkout: moving from test to main
+0d758f169bd8f48b1f4c19855693b66b40fa0d33 75a613cfefbf9b19c6591d84d033b4012796adc0 suhdonghwi <hwidongsuh@gmail.com> 1692803103 +0900	commit: update
+75a613cfefbf9b19c6591d84d033b4012796adc0 7e4c1939fdef6432f7f748703904d2673f25c22e suhdonghwi <hwidongsuh@gmail.com> 1692973132 +0900	commit: update
+7e4c1939fdef6432f7f748703904d2673f25c22e f1f0a27e2255980aba9667a06e706f093c9ab7a0 suhdonghwi <hwidongsuh@gmail.com> 1693068701 +0900	commit: update
+f1f0a27e2255980aba9667a06e706f093c9ab7a0 bb11e68376a51a82755665349eacd5938c329783 suhdonghwi <hwidongsuh@gmail.com> 1693404662 +0900	commit: update
+bb11e68376a51a82755665349eacd5938c329783 cd4d1481a458e451e82d7efeda2ad062e44186f8 suhdonghwi <hwidongsuh@gmail.com> 1693471924 +0900	commit: update
