@@ -39,9 +39,6 @@ eval "$(starship init zsh)"
 # zoxide
 eval "$(zoxide init zsh)"
 
-# thefuck
-eval $(thefuck --alias)
-
 # aliases
 alias ls='lsd'
 alias vi='nvim'
