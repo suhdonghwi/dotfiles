@@ -1,5 +1,6 @@
 local wk = require("which-key")
 local lspconfig = require("lspconfig")
+local util = lspconfig.util
 local null_ls = require("null-ls")
 
 local lsp_defaults = lspconfig.util.default_config
@@ -20,8 +21,6 @@ wk.register({
 
 -- Python
 local function get_python_path(workspace)
-	local util = lspconfig.util
-
 	-- Use activated virtualenv.
 	if vim.env.VIRTUAL_ENV then
 		return util.path.join(vim.env.VIRTUAL_ENV, "bin", "python")
@@ -54,17 +53,6 @@ lspconfig.pyright.setup({
 })
 
 -- Lua
--- local lua_runtime_path = vim.split(package.path, ";")
--- table.insert(lua_runtime_path, "lua/init.lua")
--- require("neodev").setup({
--- 	library = {
--- 		enabled = true,
--- 		runtime = true,
--- 		types = true,
--- 		plugins = false,
--- 	},
--- })
-
 lspconfig.lua_ls.setup({
 	settings = {
 		Lua = {
@@ -83,18 +71,68 @@ lspconfig.lua_ls.setup({
 lspconfig.rust_analyzer.setup({})
 
 -- Typescript
+local mason_registry = require("mason-registry")
+
+local root_path = util.find_git_ancestor(vim.fn.getcwd())
+local is_yarn_pnp = util.path.is_file(util.path.join(root_path, ".pnp.cjs"))
+
+local tsserver_path = is_yarn_pnp and util.path.join(root_path, ".yarn/sdks/typescript/lib/tsserver.js")
+	or mason_registry.get_package("typescript-language-server"):get_install_path()
+
 require("typescript-tools").setup({
+	settings = {
+		tsserver_path = tsserver_path,
+	},
 	on_attach = function(client)
 		client.server_capabilities.document_formatting = false
 	end,
 })
 
 -- null-ls
+local command_resolver = require("null-ls.helpers.command_resolver")
 null_ls.setup({
 	sources = {
-		null_ls.builtins.diagnostics.eslint,
-		null_ls.builtins.code_actions.eslint,
-		null_ls.builtins.formatting.prettier,
+		-- Yarn PnP
+		null_ls.builtins.diagnostics.eslint_d.with({
+			command = "yarn",
+			args = { "eslint", "-f", "json", "--stdin", "--stdin-filename", "$FILENAME" },
+			condition = function()
+				return is_yarn_pnp
+			end,
+		}),
+
+		null_ls.builtins.code_actions.eslint_d.with({
+			command = "yarn",
+			args = { "eslint", "-f", "json", "--stdin", "--stdin-filename", "$FILENAME" },
+			condition = function()
+				return is_yarn_pnp
+			end,
+		}),
+
+		null_ls.builtins.formatting.prettierd.with({
+			dynamic_command = command_resolver.from_yarn_pnp(),
+			condition = function()
+				return is_yarn_pnp
+			end,
+		}),
+
+		-- non Yarn PnP
+		null_ls.builtins.diagnostics.eslint_d.with({
+			condition = function()
+				return not is_yarn_pnp
+			end,
+		}),
+		null_ls.builtins.code_actions.eslint_d.with({
+			condition = function()
+				return not is_yarn_pnp
+			end,
+		}),
+		null_ls.builtins.formatting.prettierd.with({
+			condition = function()
+				return not is_yarn_pnp
+			end,
+		}),
+
 		null_ls.builtins.formatting.black,
 		null_ls.builtins.diagnostics.ruff,
 		null_ls.builtins.formatting.ocamlformat,

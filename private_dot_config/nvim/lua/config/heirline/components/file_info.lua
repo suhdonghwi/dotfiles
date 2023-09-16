@@ -33,7 +33,7 @@ local FileName = {
 			local parent_name = vim.fn.fnamemodify(self.file_name, ":h:t")
 			return parent_name .. "/"
 		end,
-		hl = { fg = "overlay1" },
+		hl = { fg = "surface2" },
 	},
 	{
 		provider = function(self)
@@ -45,7 +45,7 @@ local FileName = {
 			return file_name
 		end,
 		hl = function(self)
-			return { fg = self.no_file and "overlay1" or "text" }
+			return { fg = self.no_file and "surface2" or "text" }
 		end,
 	},
 }

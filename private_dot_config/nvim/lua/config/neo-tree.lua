@@ -6,6 +6,14 @@ wk.register({
 
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 require("neo-tree").setup({
+	event_handlers = {
+		{
+			event = "neo_tree_buffer_enter",
+			handler = function()
+				vim.cmd([[ setlocal relativenumber ]])
+			end,
+		},
+	},
 	default_component_configs = {
 		icon = {
 			folder_empty = "",

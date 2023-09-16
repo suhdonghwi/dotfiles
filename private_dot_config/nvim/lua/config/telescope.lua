@@ -1,3 +1,4 @@
+local telescope = require("telescope")
 local wk = require("which-key")
 
 wk.register({
@@ -8,3 +9,5 @@ wk.register({
 		b = { ":Telescope buffers<CR>", "Buffers" },
 	},
 }, { prefix = "<leader>" })
+
+telescope.load_extension('harpoon')

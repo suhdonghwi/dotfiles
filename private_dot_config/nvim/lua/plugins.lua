@@ -111,11 +111,6 @@ require("lazy").setup({
 		},
 
 		{ "jose-elias-alvarez/null-ls.nvim" },
-		{
-			"pmizio/typescript-tools.nvim",
-			dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-			opts = {},
-		},
 
 		{
 			"scalameta/nvim-metals",
@@ -156,13 +151,25 @@ require("lazy").setup({
 			opts = {
 				disabled_filetypes = { "neo-tree", "lazy", "mason" },
 				disable_mouse = false,
-        disabled_keys = {
-          ["<Left>"] = {},
-          ["<Down>"] = {},
-          ["<Up>"] = {},
-          ["<Right>"] = {},
-        }
+				disabled_keys = {
+					["<Left>"] = {},
+					["<Down>"] = {},
+					["<Up>"] = {},
+					["<Right>"] = {},
+				},
 			},
+		},
+
+		{
+			"pmizio/typescript-tools.nvim",
+			dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+			opts = {},
+		},
+
+		{
+			"ThePrimeagen/harpoon",
+			dependencies = { "nvim-lua/plenary.nvim" },
+      config = req("harpoon")
 		},
 	},
 })

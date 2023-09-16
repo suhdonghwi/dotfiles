@@ -4,5 +4,5 @@ return {
 	-- %c = column number
 	-- %P = percentage through file of displayed window
 	provider = "%l:%c",
-	hl = { fg = "overlay1" },
+	hl = { fg = "surface2" },
 }

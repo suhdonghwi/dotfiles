@@ -9,7 +9,7 @@ return {
 		return vim.bo.filetype == "neo-tree"
 	end,
 
-	hl = { fg = "surface1", bg = "mantle" },
+	hl = { fg = "surface2", bg = "mantle" },
 
 	Space,
 	{

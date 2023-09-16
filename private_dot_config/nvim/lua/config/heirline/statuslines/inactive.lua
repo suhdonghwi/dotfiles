@@ -5,7 +5,10 @@ local FileNameBlock = require("config.heirline.components.file_info")
 
 return {
 	condition = conditions.is_not_active,
-	hl = { fg = "surface2", bg = "mantle" },
+	hl = { bg = "mantle" },
 	Space,
-	FileNameBlock,
+	{
+		hl = { fg = "surface2", force = true },
+		FileNameBlock,
+	},
 }
