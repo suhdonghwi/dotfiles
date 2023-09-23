@@ -80,8 +80,7 @@ local mason_registry = require("mason-registry")
 local root_path = util.find_git_ancestor(vim.fn.getcwd())
 local is_yarn_pnp = util.path.is_file(util.path.join(root_path, ".pnp.cjs"))
 
-local tsserver_path = is_yarn_pnp and util.path.join(root_path, ".yarn/sdks/typescript/lib/tsserver.js")
-	or mason_registry.get_package("typescript-language-server"):get_install_path()
+local tsserver_path = is_yarn_pnp and util.path.join(root_path, ".yarn/sdks/typescript/lib/tsserver.js") or nil
 
 require("typescript-tools").setup({
 	settings = {
