@@ -11,13 +11,17 @@ wk.register({
 	["<leader>"] = { ":lua vim.lsp.buf.hover()<CR>", "Hover" },
 	l = {
 		name = "LSP", -- optional group name
-		d = { ":lua vim.diagnostic.open_float()<CR>", "Show Diagnostics" },
-		j = { ":lua vim.lsp.buf.definition()<CR>", "Jump to Definition" },
 		a = { ":lua vim.lsp.buf.code_action()<CR>", "Code Action" },
 		r = { ":lua vim.lsp.buf.rename()<CR>", "Rename" },
+		d = { ":lua vim.diagnostic.open_float()<CR>", "Show line diagnostics" },
 		f = { ":lua vim.lsp.buf.format()<CR>:w<CR>", "Format buffer" },
 	},
 }, { prefix = "<leader>" })
+
+wk.register({
+	d = { ":Telescope lsp_definitions<CR>", "Jump to Definition" },
+	r = { ":Telescope lsp_references<CR>", "Jump to references" },
+}, { prefix = "g" })
 
 -- Python
 local function get_python_path(workspace)

@@ -11,7 +11,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 -- Sync clipboard between OS and Neovim.
-vim.o.clipboard = "unnamedplus"
+-- vim.o.clipboard = "unnamedplus"
 
 vim.o.tabstop = 2
 vim.o.shiftwidth = 2
@@ -45,6 +45,8 @@ vim.o.cursorline = true
 
 vim.api.nvim_create_autocmd("InsertLeave", { command = "call jobstart('xkbswitch -s 0')" })
 
+vim.o.mousescroll = "ver:1"
+
 vim.diagnostic.config({
 	virtual_text = {
 		prefix = "▎", -- Could be '●', '▎', 'x'
@@ -69,3 +71,5 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 	opts.border = opts.border or "rounded"
 	return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
+
+vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])

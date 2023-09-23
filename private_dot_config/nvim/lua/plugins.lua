@@ -99,6 +99,11 @@ require("lazy").setup({
 		},
 
 		{
+			"windwp/nvim-ts-autotag",
+			dependencies = { "nvim-treesitter/nvim-treesitter" },
+		},
+
+		{
 			"nvim-telescope/telescope.nvim",
 			dependencies = { "nvim-lua/plenary.nvim" },
 			config = req("telescope"),
@@ -146,19 +151,19 @@ require("lazy").setup({
 			config = req("flash"),
 		},
 
-		{
-			"m4xshen/hardtime.nvim",
-			opts = {
-				disabled_filetypes = { "neo-tree", "lazy", "mason" },
-				disable_mouse = false,
-				disabled_keys = {
-					["<Left>"] = {},
-					["<Down>"] = {},
-					["<Up>"] = {},
-					["<Right>"] = {},
-				},
-			},
-		},
+		-- {
+		-- 	"m4xshen/hardtime.nvim",
+		-- 	opts = {
+		-- 		disabled_filetypes = { "neo-tree", "lazy", "mason" },
+		-- 		disable_mouse = false,
+		-- 		disabled_keys = {
+		-- 			["<Left>"] = {},
+		-- 			["<Down>"] = {},
+		-- 			["<Up>"] = {},
+		-- 			["<Right>"] = {},
+		-- 		},
+		-- 	},
+		-- },
 
 		{
 			"pmizio/typescript-tools.nvim",
@@ -169,7 +174,7 @@ require("lazy").setup({
 		{
 			"ThePrimeagen/harpoon",
 			dependencies = { "nvim-lua/plenary.nvim" },
-      config = req("harpoon")
+			config = req("harpoon"),
 		},
 	},
 })
