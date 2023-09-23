@@ -81,6 +81,16 @@ require("lazy").setup({
 		},
 
 		{
+			"tpope/vim-fugitive",
+			config = req("fugitive"),
+		},
+
+		{
+			"sindrets/diffview.nvim",
+			config = req("diffview"),
+		},
+
+		{
 			"catppuccin/nvim",
 			name = "catppuccin",
 			priority = 1000,

@@ -43,9 +43,14 @@ vim.o.termguicolors = true
 
 vim.o.cursorline = true
 
+-- Change input source to English when leaving insert mode
 vim.api.nvim_create_autocmd("InsertLeave", { command = "call jobstart('xkbswitch -s 0')" })
 
+-- Mouse scrolling unit is a single line
 vim.o.mousescroll = "ver:1"
+
+-- Diff fillchar
+vim.opt.fillchars:append({ diff = "╱" })
 
 vim.diagnostic.config({
 	virtual_text = {
@@ -72,4 +77,5 @@ function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 	return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
+-- Format on save
 vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
