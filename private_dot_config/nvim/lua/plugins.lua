@@ -150,7 +150,7 @@ require("lazy").setup({
 			opts = {},
 			keys = {
 				{
-					"s",
+					"<CR>",
 					mode = { "n", "x", "o" },
 					function()
 						-- default options: exact mode, multi window, all directions, with a backdrop

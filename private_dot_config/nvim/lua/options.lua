@@ -1,56 +1,88 @@
 vim.cmd("language en_US")
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+o = vim.o
+opt = vim.opt
+g = vim.g
 
--- Set completeopt to have a better completion experience
-vim.o.completeopt = "menuone,noselect"
+g.mapleader = " "
+
+-- Don't store backup while overwriting the file
+o.backup = false
+o.writebackup = false
+
+-- Enable persistent undo history
+o.undolevels = 1000
+o.undofile = true
+
+-- Enable mouse for all available modes
+o.mouse = "a"
+-- Mouse scrolling unit is a single line
+o.mousescroll = "ver:1"
+
+-- Enable all filetype plugins
+vim.cmd('filetype plugin indent on') 
 
 -- Hybrid line number
-vim.o.number = true
-vim.o.relativenumber = true
+o.number = true
+o.relativenumber = true
 
--- Sync clipboard between OS and Neovim.
--- vim.o.clipboard = "unnamedplus"
+-- Indent wrapped lines to match line start
+o.breakindent = true
 
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2
-vim.o.softtabstop = 2
-vim.o.expandtab = true
+-- Highlight current line
+o.cursorline = true
 
--- Case-insensitive searching UNLESS \C or capital in search
-vim.o.smartcase = true
-vim.o.ignorecase = true
+-- Horizontal splits will be below
+o.splitbelow = true    
+
+-- Vertical splits will be to the right
+o.splitright = true    
+
+-- Reduce scroll during window split
+o.splitkeep = 'screen'      
+
+-- Don't show mode in command line
+o.showmode = false
+-- Don't show cursor position in command line
+o.ruler = false
+
+-- Display long lines as just one line
+o.wrap = false
 
 -- Keep signcolumn on by default
-vim.o.signcolumn = "yes"
+o.signcolumn = "yes"
 
-vim.o.cmdheight = 1
-vim.o.showmode = false
+-- Don't show `~` outside of buffer
+o.fillchars     = 'eob: '
 
-vim.o.backup = false
-vim.o.writebackup = false
+-- Set completeopt to have a better completion experience
+o.completeopt = "menuone,noinsert,noselect"
+
+o.tabstop = 2
+o.shiftwidth = 2
+o.softtabstop = 2
+o.expandtab = true
+
+-- Case-insensitive searching UNLESS \C or capital in search
+o.smartcase = true
+o.ignorecase = true
+
+-- Show search results while typing
+o.incsearch = true
+
+o.cmdheight = 1
 
 -- Decrease update time
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+o.updatetime = 250
+o.timeoutlen = 300
 
--- Save undo history
-vim.o.undolevels = 1000
-vim.o.undofile = true
-
-vim.o.termguicolors = true
-
-vim.o.cursorline = true
+o.termguicolors = true
 
 -- Change input source to English when leaving insert mode
 vim.api.nvim_create_autocmd("InsertLeave", { command = "call jobstart('xkbswitch -s 0')" })
 
--- Mouse scrolling unit is a single line
-vim.o.mousescroll = "ver:1"
-
 -- Diff fillchar
-vim.opt.fillchars:append({ diff = "╱" })
+opt.fillchars:append({ diff = "╱" })
 
 vim.diagnostic.config({
 	virtual_text = {
