@@ -75,8 +75,6 @@ lspconfig.lua_ls.setup({
 lspconfig.rust_analyzer.setup({})
 
 -- Typescript
-local mason_registry = require("mason-registry")
-
 local root_path = util.find_git_ancestor(vim.fn.getcwd())
 local is_yarn_pnp = util.path.is_file(util.path.join(root_path, ".pnp.cjs"))
 
