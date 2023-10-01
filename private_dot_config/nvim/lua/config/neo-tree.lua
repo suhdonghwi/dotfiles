@@ -14,6 +14,14 @@ require("neo-tree").setup({
 			end,
 		},
 	},
+	filesystem = {
+		follow_current_file = {
+			enabled = true, -- This will find and focus the file in the active buffer every time the current file is changed while the tree is open.
+			leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+		},
+		use_libuv_file_watcher = true,
+	},
+	auto_clean_after_session_restore = true,
 	default_component_configs = {
 		icon = {
 			folder_empty = "",

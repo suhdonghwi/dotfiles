@@ -1,4 +1,7 @@
 local telescope = require("telescope")
+local builtin = require("telescope.builtin")
+local utils = require("telescope.utils")
+
 local wk = require("which-key")
 
 wk.register({

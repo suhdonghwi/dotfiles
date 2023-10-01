@@ -161,20 +161,6 @@ require("lazy").setup({
 			config = req("flash"),
 		},
 
-		-- {
-		-- 	"m4xshen/hardtime.nvim",
-		-- 	opts = {
-		-- 		disabled_filetypes = { "neo-tree", "lazy", "mason" },
-		-- 		disable_mouse = false,
-		-- 		disabled_keys = {
-		-- 			["<Left>"] = {},
-		-- 			["<Down>"] = {},
-		-- 			["<Up>"] = {},
-		-- 			["<Right>"] = {},
-		-- 		},
-		-- 	},
-		-- },
-
 		{
 			"pmizio/typescript-tools.nvim",
 			dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
@@ -186,5 +172,12 @@ require("lazy").setup({
 			dependencies = { "nvim-lua/plenary.nvim" },
 			config = req("harpoon"),
 		},
+
+		{
+			"rmagatti/auto-session",
+			config = req("auto-session"),
+		},
+
+		{ "folke/neodev.nvim", opts = {} },
 	},
 })

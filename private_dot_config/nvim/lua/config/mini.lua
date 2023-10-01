@@ -6,12 +6,12 @@ require("mini.surround").setup()
 
 require("mini.pairs").setup()
 
-require("mini.animate").setup({
-	cursor = { enable = false },
-	resize = { enable = false },
-	open = { enable = false },
-	close = { enable = false },
-})
+-- require("mini.animate").setup({
+-- 	cursor = { enable = false },
+-- 	resize = { enable = false },
+-- 	open = { enable = false },
+-- 	close = { enable = false },
+-- })
 
 vim.cmd([[ highlight MiniIndentscopeSymbol guifg=#6c7086 ]])
 

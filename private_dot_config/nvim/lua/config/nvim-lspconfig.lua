@@ -1,3 +1,6 @@
+-- IMPORTANT: make sure to setup neodev BEFORE lspconfig
+require("neodev").setup({})
+
 local wk = require("which-key")
 local lspconfig = require("lspconfig")
 local util = lspconfig.util
@@ -8,13 +11,39 @@ lsp_defaults.capabilities =
 	vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 wk.register({
-	["<leader>"] = { ":lua vim.lsp.buf.hover()<CR>", "Hover" },
+	["<leader>"] = {
+		function()
+			vim.lsp.buf.hover()
+		end,
+		"Hover",
+	},
 	l = {
 		name = "LSP", -- optional group name
-		a = { ":lua vim.lsp.buf.code_action()<CR>", "Code Action" },
-		r = { ":lua vim.lsp.buf.rename()<CR>", "Rename" },
-		d = { ":lua vim.diagnostic.open_float()<CR>", "Show line diagnostics" },
-		f = { ":lua vim.lsp.buf.format()<CR>:w<CR>", "Format buffer" },
+		a = {
+			function()
+				vim.lsp.buf.code_action()
+			end,
+			"Code Action",
+		},
+		r = {
+			function()
+				vim.lsp.buf.rename()
+			end,
+			"Rename",
+		},
+		d = {
+			function()
+				vim.diagnostic.open_float()
+			end,
+			"Show line diagnostics",
+		},
+		f = {
+			function()
+				vim.lsp.buf.format()
+				vim.api.nvim_command("write")
+			end,
+			"Format buffer",
+		},
 	},
 }, { prefix = "<leader>" })
 

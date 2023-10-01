@@ -1,8 +1,8 @@
 vim.cmd("language en_US")
 
-o = vim.o
-opt = vim.opt
-g = vim.g
+local o = vim.o
+local opt = vim.opt
+local g = vim.g
 
 g.mapleader = " "
 
@@ -20,7 +20,7 @@ o.mouse = "a"
 o.mousescroll = "ver:1"
 
 -- Enable all filetype plugins
-vim.cmd('filetype plugin indent on') 
+vim.cmd("filetype plugin indent on")
 
 -- Hybrid line number
 o.number = true
@@ -33,13 +33,13 @@ o.breakindent = true
 o.cursorline = true
 
 -- Horizontal splits will be below
-o.splitbelow = true    
+o.splitbelow = true
 
 -- Vertical splits will be to the right
-o.splitright = true    
+o.splitright = true
 
 -- Reduce scroll during window split
-o.splitkeep = 'screen'      
+o.splitkeep = "screen"
 
 -- Don't show mode in command line
 o.showmode = false
@@ -53,7 +53,7 @@ o.wrap = false
 o.signcolumn = "yes"
 
 -- Don't show `~` outside of buffer
-o.fillchars     = 'eob: '
+o.fillchars = "eob: "
 
 -- Set completeopt to have a better completion experience
 o.completeopt = "menuone,noinsert,noselect"
@@ -84,12 +84,14 @@ vim.api.nvim_create_autocmd("InsertLeave", { command = "call jobstart('xkbswitch
 -- Diff fillchar
 opt.fillchars:append({ diff = "╱" })
 
+-- Set diagnostic virtual text prefix
 vim.diagnostic.config({
 	virtual_text = {
 		prefix = "▎", -- Could be '●', '▎', 'x'
 	},
 })
 
+-- Set diagnostic signs
 local diagnostic_sign = "󱓻"
 local signs = {
 	Error = diagnostic_sign,
@@ -102,6 +104,7 @@ for type, icon in pairs(signs) do
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+-- Set LSP floating windows border
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
 	opts = opts or {}
@@ -111,3 +114,11 @@ end
 
 -- Format on save
 vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+
+-- Change cwd based on opening file path
+vim.cmd([[
+augroup cdpwd
+    autocmd!
+    autocmd VimEnter * cd %:p:h
+augroup END
+]])
