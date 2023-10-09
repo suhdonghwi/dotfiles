@@ -1,19 +1,13 @@
 format = """
 $username\
 $hostname\
-$localip\
 $shlvl\
 $directory\
-$fossil_branch\
 $git_branch\
 $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
-$spack\
-$memory_usage\
-$env_var\
-$custom\
 $sudo\
 $cmd_duration\
 $line_break\
@@ -23,7 +17,6 @@ $time\
 $status\
 $os\
 $container\
-$shell\
 $character"""
 
 # Replace the "❯" symbol in the prompt with "➜"
@@ -33,8 +26,3 @@ error_symbol = "[λ](bold red)" # The "success_symbol" segment is being set to "
 
 [git_branch]
 symbol = ' '
-
-[scala]
-disabled = true
-
-

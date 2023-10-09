@@ -8,6 +8,9 @@ fi
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
+# zstyle
+zstyle ':completion:*' menu select
+
 # PATH variable
 export PATH="$PATH:$HOME/bin"
 

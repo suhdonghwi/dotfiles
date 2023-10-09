@@ -55,7 +55,7 @@
     command_execution_time    # previous command duration
     # =========================[ Line #2 ]=========================
     newline                   # \n
-    # virtualenv                # python virtual environment
+    virtualenv                # python virtual environment
     prompt_char               # prompt symbol
   )
 
@@ -94,6 +94,7 @@
   # Prompt symbol in overwrite vi mode is the same as in command mode.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_OVERWRITE_STATE=false
 
+  # typeset -g POWERLEVEL9K_VIRTUALENV_GENERIC_NAMES=(virtualenv venv .venv env)
   # Grey Python Virtual Environment.
   typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=$grey
   # Don't show Python version.
