@@ -109,11 +109,6 @@ require("lazy").setup({
 		},
 
 		{
-			"windwp/nvim-ts-autotag",
-			dependencies = { "nvim-treesitter/nvim-treesitter" },
-		},
-
-		{
 			"nvim-telescope/telescope.nvim",
 			dependencies = { "nvim-lua/plenary.nvim" },
 			config = req("telescope"),

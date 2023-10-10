@@ -8,6 +8,9 @@ fi
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
+# GPG
+export GPG_TTY=$TTY
+
 # zstyle
 zstyle ':completion:*' menu select
 

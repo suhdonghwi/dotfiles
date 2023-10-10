@@ -14,4 +14,19 @@ wk.register({
 	},
 }, { prefix = "<leader>" })
 
+wk.register({
+	d = {
+		function()
+			builtin.lsp_definitions({ jump_type = "never" })
+		end,
+		"Jump to Definition",
+	},
+	r = {
+		function()
+			builtin.lsp_references({ jump_type = "never" })
+		end,
+		"Jump to references",
+	},
+}, { prefix = "g" })
+
 telescope.load_extension("harpoon")

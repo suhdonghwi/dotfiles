@@ -47,11 +47,6 @@ wk.register({
 	},
 }, { prefix = "<leader>" })
 
-wk.register({
-	d = { ":Telescope lsp_definitions<CR>", "Jump to Definition" },
-	r = { ":Telescope lsp_references<CR>", "Jump to references" },
-}, { prefix = "g" })
-
 -- Python
 local function get_python_path(workspace)
 	-- Use activated virtualenv.

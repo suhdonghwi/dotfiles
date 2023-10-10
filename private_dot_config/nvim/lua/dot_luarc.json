@@ -69,6 +69,8 @@
         "/Users/suhdonghwi/.local/share/nvim/lazy/popup.nvim/lua",
         "/Users/suhdonghwi/.config/nvim/lua",
         "/Users/suhdonghwi/.config/nvim/lua",
+        "${3rd}/luv/library",
+        "${3rd}/luv/library",
         "${3rd}/luv/library"
     ],
     "workspace.checkThirdParty": false
