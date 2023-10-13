@@ -2,3 +2,4 @@ romkatv/powerlevel10k
 
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
+
