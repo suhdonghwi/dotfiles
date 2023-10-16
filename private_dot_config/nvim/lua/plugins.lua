@@ -115,6 +115,11 @@ require("lazy").setup({
 		},
 
 		{
+			"nvim-telescope/telescope-ui-select.nvim",
+			dependencies = { "nvim-telescope/telescope.nvim" },
+		},
+
+		{
 			"folke/trouble.nvim",
 			dependencies = { "nvim-tree/nvim-web-devicons" },
 			config = req("trouble"),

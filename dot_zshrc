@@ -17,6 +17,7 @@ export GPG_TTY=$TTY
 
 # zstyle
 zstyle ':completion:*' menu select
+autoload -Uz compinit && compinit
 
 # PATH variable
 export PATH="$PATH:$HOME/bin"

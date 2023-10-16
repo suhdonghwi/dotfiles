@@ -80,6 +80,14 @@ lspconfig.pyright.setup({
 	end,
 })
 
+lspconfig.ruff_lsp.setup({
+	init_options = {
+		settings = {
+			args = {},
+		},
+	},
+})
+
 -- Lua
 lspconfig.lua_ls.setup({
 	settings = {
@@ -159,7 +167,6 @@ null_ls.setup({
 		}),
 
 		null_ls.builtins.formatting.black,
-		null_ls.builtins.diagnostics.ruff,
 		null_ls.builtins.formatting.ocamlformat,
 		null_ls.builtins.formatting.stylua,
 	},
