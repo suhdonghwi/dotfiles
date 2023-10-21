@@ -108,6 +108,10 @@ require("lazy").setup({
 			config = req("nvim-treesitter"),
 		},
 
+		{ "nvim-treesitter/playground", dependencies = { "nvim-treesitter/nvim-treesitter" } },
+
+		{ "RRethy/nvim-treesitter-textsubjects", dependencies = { "nvim-treesitter/nvim-treesitter" } },
+
 		{
 			"nvim-telescope/telescope.nvim",
 			dependencies = { "nvim-lua/plenary.nvim" },
