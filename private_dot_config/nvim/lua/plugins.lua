@@ -144,6 +144,10 @@ require("lazy").setup({
 				"nvim-lua/plenary.nvim",
 				"nvim-tree/nvim-web-devicons",
 				"MunifTanjim/nui.nvim",
+				{
+					"s1n7ax/nvim-window-picker",
+					config = req("nvim-window-picker"),
+				},
 			},
 			config = req("neo-tree"),
 		},
