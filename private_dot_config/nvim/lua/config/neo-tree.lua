@@ -7,13 +7,6 @@ wk.register({
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
 require("neo-tree").setup({
-	window = {
-		mappings = {
-			["<CR>"] = "open_with_window_picker",
-			["<C-v>"] = "vsplit_with_window_picker",
-			["<C-x>"] = "split_with_window_picker",
-		},
-	},
 	event_handlers = {
 		{
 			event = "neo_tree_buffer_enter",

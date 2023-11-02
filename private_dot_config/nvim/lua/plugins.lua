@@ -108,10 +108,6 @@ require("lazy").setup({
 			config = req("nvim-treesitter"),
 		},
 
-		{ "nvim-treesitter/playground", dependencies = { "nvim-treesitter/nvim-treesitter" } },
-
-		{ "RRethy/nvim-treesitter-textsubjects", dependencies = { "nvim-treesitter/nvim-treesitter" } },
-
 		{
 			"nvim-telescope/telescope.nvim",
 			dependencies = { "nvim-lua/plenary.nvim" },
@@ -121,12 +117,6 @@ require("lazy").setup({
 		{
 			"nvim-telescope/telescope-ui-select.nvim",
 			dependencies = { "nvim-telescope/telescope.nvim" },
-		},
-
-		{
-			"folke/trouble.nvim",
-			dependencies = { "nvim-tree/nvim-web-devicons" },
-			config = req("trouble"),
 		},
 
 		{ "jose-elias-alvarez/null-ls.nvim" },
@@ -144,10 +134,6 @@ require("lazy").setup({
 				"nvim-lua/plenary.nvim",
 				"nvim-tree/nvim-web-devicons",
 				"MunifTanjim/nui.nvim",
-				{
-					"s1n7ax/nvim-window-picker",
-					config = req("nvim-window-picker"),
-				},
 			},
 			config = req("neo-tree"),
 		},
@@ -158,7 +144,7 @@ require("lazy").setup({
 			opts = {},
 			keys = {
 				{
-					"<CR>",
+					"<C-f>",
 					mode = { "n", "x", "o" },
 					function()
 						-- default options: exact mode, multi window, all directions, with a backdrop
@@ -176,9 +162,8 @@ require("lazy").setup({
 		},
 
 		{
-			"ThePrimeagen/harpoon",
-			dependencies = { "nvim-lua/plenary.nvim" },
-			config = req("harpoon"),
+			"dmmulroy/tsc.nvim",
+			config = req("tsc"),
 		},
 
 		{
@@ -187,5 +172,7 @@ require("lazy").setup({
 		},
 
 		{ "folke/neodev.nvim", opts = {} },
+
+		{ "zbirenbaum/copilot.lua", config = req("copilot") },
 	},
 })
