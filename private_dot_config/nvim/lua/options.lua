@@ -6,6 +6,10 @@ local g = vim.g
 
 g.mapleader = " "
 
+-- Disable netrw
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+
 -- Don't store backup while overwriting the file
 o.backup = false
 o.writebackup = false

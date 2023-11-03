@@ -5,7 +5,7 @@ local colors = require("catppuccin.palettes").get_palette("mocha")
 heirline.load_colors(colors)
 
 local DefaultStatusLine = require("config.heirline.statuslines.default")
-local NeotreeStatusLine = require("config.heirline.statuslines.neotree")
+local NvimTreeStatusLine = require("config.heirline.statuslines.nvimtree")
 local InactiveStatusLine = require("config.heirline.statuslines.inactive")
 
 local mode_colors_map = {
@@ -34,7 +34,7 @@ require("heirline").setup({
 			end,
 		},
 		fallthrough = false,
-		NeotreeStatusLine,
+		NvimTreeStatusLine,
 		InactiveStatusLine,
 		DefaultStatusLine,
 	},

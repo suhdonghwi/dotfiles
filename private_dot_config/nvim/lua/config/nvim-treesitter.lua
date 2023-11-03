@@ -19,14 +19,4 @@ require("nvim-treesitter.configs").setup({
 		-- Instead of true it can also be a list of languages
 		additional_vim_regex_highlighting = false,
 	},
-
-	textsubjects = {
-		enable = true,
-		prev_selection = ",", -- (Optional) keymap to select the previous selection
-		keymaps = {
-			["."] = "textsubjects-smart",
-			[";"] = "textsubjects-container-outer",
-			["i;"] = { "textsubjects-container-inner", desc = "Select inside containers (classes, functions, etc.)" },
-		},
-	},
 })
