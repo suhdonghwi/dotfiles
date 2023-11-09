@@ -80,6 +80,7 @@ o.cmdheight = 1
 o.updatetime = 250
 o.timeoutlen = 300
 
+-- ???
 o.termguicolors = true
 
 -- Change input source to English when leaving insert mode
@@ -126,3 +127,7 @@ augroup cdpwd
     autocmd VimEnter * cd %:p:h
 augroup END
 ]])
+
+-- Set gui font (for Neovide)
+vim.cmd([[set guifont=Iosevka\ Nerd\ Font:h14]])
+vim.g.neovide_scroll_animation_length = 1.0
