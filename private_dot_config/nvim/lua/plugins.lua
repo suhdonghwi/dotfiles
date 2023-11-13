@@ -166,6 +166,7 @@ require("lazy").setup({
 		{
 			"rmagatti/auto-session",
 			config = req("auto-session"),
+			enabled = false,
 		},
 
 		{ "folke/neodev.nvim", opts = {} },
