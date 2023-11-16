@@ -172,5 +172,10 @@ require("lazy").setup({
 		{ "folke/neodev.nvim", opts = {} },
 
 		{ "zbirenbaum/copilot.lua", config = req("copilot") },
+
+		{
+			"olimorris/persisted.nvim",
+			config = req("persisted"),
+		},
 	},
 })
