@@ -40,7 +40,6 @@ require("lazy").setup({
 				"williamboman/mason-lspconfig.nvim",
 				{
 					"j-hui/fidget.nvim",
-					branch = "legacy",
 					config = req("fidget"),
 				},
 				"onsails/lspkind.nvim",
@@ -163,19 +162,8 @@ require("lazy").setup({
 			config = req("tsc"),
 		},
 
-		{
-			"rmagatti/auto-session",
-			config = req("auto-session"),
-			enabled = false,
-		},
-
 		{ "folke/neodev.nvim", opts = {} },
 
 		{ "zbirenbaum/copilot.lua", config = req("copilot") },
-
-		{
-			"olimorris/persisted.nvim",
-			config = req("persisted"),
-		},
 	},
 })
