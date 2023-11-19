@@ -118,7 +118,7 @@ require("lazy").setup({
 			dependencies = { "nvim-telescope/telescope.nvim" },
 		},
 
-		{ "jose-elias-alvarez/null-ls.nvim" },
+		{ "nvimtools/none-ls.nvim" },
 
 		{
 			"scalameta/nvim-metals",
@@ -165,5 +165,10 @@ require("lazy").setup({
 		{ "folke/neodev.nvim", opts = {} },
 
 		{ "zbirenbaum/copilot.lua", config = req("copilot") },
+
+		{
+			"tzachar/local-highlight.nvim",
+			config = req("local-highlight"),
+		},
 	},
 })
