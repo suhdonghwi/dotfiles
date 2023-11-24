@@ -170,5 +170,10 @@ require("lazy").setup({
 			"tzachar/local-highlight.nvim",
 			config = req("local-highlight"),
 		},
+
+		{
+			"rmagatti/auto-session",
+			config = req("auto-session"),
+		},
 	},
 })
