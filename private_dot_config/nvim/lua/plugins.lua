@@ -175,5 +175,9 @@ require("lazy").setup({
 			"rmagatti/auto-session",
 			config = req("auto-session"),
 		},
+
+		{
+			"lukas-reineke/lsp-format.nvim",
+		},
 	},
 })

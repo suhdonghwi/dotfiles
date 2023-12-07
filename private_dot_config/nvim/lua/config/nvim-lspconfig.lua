@@ -1,4 +1,5 @@
 -- IMPORTANT: make sure to setup neodev BEFORE lspconfig
+require("lsp-format").setup {}
 require("neodev").setup({})
 
 local wk = require("which-key")
@@ -116,8 +117,9 @@ require("typescript-tools").setup({
 	settings = {
 		tsserver_path = tsserver_path,
 	},
-	on_attach = function(client)
+	on_attach = function(client, bufnr)
 		client.server_capabilities.document_formatting = false
+    require("lsp-format").on_attach(client, bufnr)
 	end,
 })
 
