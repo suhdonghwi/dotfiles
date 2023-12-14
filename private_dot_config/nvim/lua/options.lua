@@ -1,4 +1,4 @@
-vim.cmd("language en_US")
+vim.cmd("language en_US.UTF-8")
 
 local o = vim.o
 local opt = vim.opt

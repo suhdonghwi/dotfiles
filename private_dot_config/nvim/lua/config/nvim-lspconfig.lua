@@ -119,7 +119,6 @@ require("typescript-tools").setup({
 	},
 	on_attach = function(client, bufnr)
 		client.server_capabilities.document_formatting = false
-    require("lsp-format").on_attach(client, bufnr)
 	end,
 })
 
@@ -172,6 +171,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.ocamlformat,
 		null_ls.builtins.formatting.stylua,
 	},
+  on_attach = require("lsp-format").on_attach
 })
 
 -- HTML
