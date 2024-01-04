@@ -1,3 +1,1 @@
 require("init")
-
--- hello
