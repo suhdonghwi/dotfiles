@@ -1,4 +1,11 @@
-require("mini.ai").setup()
+local spec_treesitter = require("mini.ai").gen_spec.treesitter
+require("mini.ai").setup({
+	custom_textobjects = {
+		t = spec_treesitter({ a = "@jsx_tag.outer", i = "@jsx_tag.inner" }),
+    f = spec_treesitter({ a = "@function.outer", i = "@function.inner" }),
+	},
+	-- search_method = "cover_or_prev",
+})
 
 require("ts_context_commentstring").setup({
 	enable_autocmd = false,

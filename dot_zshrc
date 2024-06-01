@@ -92,10 +92,9 @@ function toss_merge_fix() {
         echo_green_bold "Running yarn to update dependencies..."
         yarn
 
-        git add -A
-
         # Continue merging process
         if git merge --continue; then
+            git add -A
             echo_green_bold "Merge continued successfully."
         else
             echo_green_bold "Error continuing merge. Please check your repository."
@@ -112,3 +111,7 @@ make_env() {
 }
 
 export NODE_TLS_REJECT_UNAUTHORIZED=0
+
+android_reverse() {
+  adb -s R3CWC05M5DE reverse tcp:8081 tcp:8081
+}
