@@ -92,9 +92,10 @@ function toss_merge_fix() {
         echo_green_bold "Running yarn to update dependencies..."
         yarn
 
+        git add -A
+
         # Continue merging process
         if git merge --continue; then
-            git add -A
             echo_green_bold "Merge continued successfully."
         else
             echo_green_bold "Error continuing merge. Please check your repository."
