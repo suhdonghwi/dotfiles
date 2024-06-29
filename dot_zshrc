@@ -22,6 +22,9 @@ autoload -Uz compinit && compinit
 # PATH variable
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 
+# EDITOR
+export EDITOR="nvim"
+
 # aliases
 alias ls="lsd"
 
@@ -54,65 +57,5 @@ export PATH=$PATH:$ANDROID_HOME/build-tools/33.0.2
 # workaround for node memory issues
 export NODE_OPTIONS=--max_old_space_size=8192
 
-# custom functions
-function echo_green_bold() {
-    echo "\033[1;32m>>> $1\033[0m"
-}
-
-function toss_merge_fix() {
-    # Store the current branch name
-    local current_branch=$(git symbolic-ref --short HEAD)
-    
-    # Ensure we are in a git repository
-    if [[ -z $current_branch ]]; then
-        echo_green_bold "This is not a git repository."
-        return 1
-    fi
-
-    # Pull the latest main branch
-    echo_green_bold "Pulling the latest changes from the main branch..."
-    git fetch origin main:main
-    
-    # Merge main into the current branch
-    echo_green_bold "Merging main into $current_branch..."
-    if git merge main; then
-        echo_green_bold "Merge successful."
-    else
-        echo_green_bold "Merge conflicts detected, resolving specific conflicts automatically..."
-
-        # Get the root directory of the Git repository
-        local git_root=$(git rev-parse --show-toplevel)
-        
-        # Resolve conflicts by accepting 'theirs' for specific files
-        git checkout --theirs -- "${git_root}/.pnp.cjs" "${git_root}/yarn.lock"
-        git add "${git_root}/.pnp.cjs" "${git_root}/yarn.lock"
-        
-        echo_green_bold "Resolved conflicts in .pnp.cjs and yarn.lock."
-
-        echo_green_bold "Running yarn to update dependencies..."
-        yarn
-
-        git add -A
-
-        # Continue merging process
-        if git merge --continue; then
-            echo_green_bold "Merge continued successfully."
-        else
-            echo_green_bold "Error continuing merge. Please check your repository."
-            return 1
-        fi
-    fi
-}
-
-make_env() {
-  local currentDirName=${PWD##*/}
-  echo "SERVICE=${currentDirName}" > .env
-  echo "SERVER_ENV=alpha" >> .env
-  echo "USER_NO=28681849" >> .env
-}
 
 export NODE_TLS_REJECT_UNAUTHORIZED=0
-
-android_reverse() {
-  adb -s R3CWC05M5DE reverse tcp:8081 tcp:8081
-}
