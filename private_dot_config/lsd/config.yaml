@@ -4,3 +4,5 @@ icons:
   # When "classic" is set, this is set to "never".
   # Possible values: always, auto, never
   when: never
+
+total-size: true

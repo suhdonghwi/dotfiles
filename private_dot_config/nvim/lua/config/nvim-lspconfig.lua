@@ -45,14 +45,7 @@ wk.register({
 			"Format buffer",
 		},
 		o = {
-			function()
-				local params = {
-					command = "_typescript.organizeImports",
-					arguments = { vim.api.nvim_buf_get_name(0) },
-					title = "",
-				}
-				vim.lsp.buf.execute_command(params)
-			end,
+      ":TSToolsOrganizeImports<CR>",
 			"Organize imports (TypeScript specific)",
 		},
 	},
