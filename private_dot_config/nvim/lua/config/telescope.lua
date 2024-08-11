@@ -4,30 +4,53 @@ local utils = require("telescope.utils")
 
 local wk = require("which-key")
 
-wk.register({
-	t = {
-		name = "Telescope",
-		f = { ":Telescope find_files<CR>", "Find Files" },
-		g = { ":Telescope live_grep<CR>", "Live Grep" },
-		s = { ":Telescope git_status<CR>", "Git Status" },
-		b = { ":Telescope buffers<CR>", "Buffers" },
-		r = { ":Telescope resume<CR>", "Resume" },
+wk.add({
+	{
+		"<leader>t",
+		group = "Telescope",
 	},
-}, { prefix = "<leader>" })
+  {
+    "<leader>tf",
+    ":Telescope find_files<CR>",
+    desc = "Find Files",
+  },
+  {
+    "<leader>tg",
+    ":Telescope live_grep<CR>",
+    desc = "Live Grep",
+  },
+  {
+    "<leader>ts",
+    ":Telescope git_status<CR>",
+    desc = "Git Status",
+  },
+  {
+    "<leader>tb",
+    ":Telescope buffers<CR>",
+    desc = "Buffers",
+  },
+  {
+    "<leader>tr",
+    ":Telescope resume<CR>",
+    desc = "Resume",
+  },
+})
 
-wk.register({
-	d = {
-		function()
-			builtin.lsp_definitions({ jump_type = "never" })
-		end,
-		"Jump to Definition",
-	},
-	r = {
-		function()
-			builtin.lsp_references({ jump_type = "never" })
-		end,
-		"Jump to references",
-	},
-}, { prefix = "g" })
+wk.add({
+  {
+    "gd",
+    function()
+      builtin.lsp_definitions({ jump_type = "never" })
+    end,
+    desc = "Jump to Definition",
+  },
+  {
+    "gr",
+    function()
+      builtin.lsp_references({ jump_type = "never" })
+    end,
+    desc = "Jump to references",
+  },
+})
 
 telescope.load_extension("ui-select")

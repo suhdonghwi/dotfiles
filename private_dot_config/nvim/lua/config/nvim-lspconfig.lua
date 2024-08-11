@@ -10,46 +10,53 @@ local lsp_defaults = lspconfig.util.default_config
 lsp_defaults.capabilities =
 	vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-wk.register({
-	["<leader>"] = {
+wk.add({
+	{
+		"<leader><leader>",
 		function()
 			vim.lsp.buf.hover()
 		end,
-		"Hover",
+		desc = "Hover",
 	},
-	l = {
-		name = "LSP", -- optional group name
-		a = {
-			function()
-				vim.lsp.buf.code_action()
-			end,
-			"Code Action",
-		},
-		r = {
-			function()
-				vim.lsp.buf.rename()
-			end,
-			"Rename",
-		},
-		d = {
-			function()
-				vim.diagnostic.open_float()
-			end,
-			"Show line diagnostics",
-		},
-		f = {
-			function()
-				vim.lsp.buf.format()
-				vim.api.nvim_command("write")
-			end,
-			"Format buffer",
-		},
-		o = {
-      ":TSToolsOrganizeImports<CR>",
-			"Organize imports (TypeScript specific)",
-		},
-	},
-}, { prefix = "<leader>" })
+  {
+    "<leader>l",
+    group = "LSP",
+  },
+  {
+    "<leader>la",
+    function()
+      vim.lsp.buf.code_action()
+    end,
+    desc = "Code Action",
+  },
+  {
+    "<leader>lr",
+    function()
+      vim.lsp.buf.rename()
+    end,
+    desc = "Rename",
+  },
+  {
+    "<leader>ld",
+    function()
+      vim.diagnostic.open_float()
+    end,
+    desc = "Show line diagnostics",
+  },
+  {
+    "<leader>lf",
+    function()
+      vim.lsp.buf.format()
+      vim.api.nvim_command("write")
+    end,
+    desc = "Format buffer",
+  },
+  {
+    "<leader>lo",
+    ":TSToolsOrganizeImports<CR>",
+    desc = "Organize imports (TypeScript specific)",
+  },
+})
 
 -- Python
 local function get_python_path(workspace)

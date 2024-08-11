@@ -7,10 +7,15 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 -- Keymaps for switching between tabs next and previous
-wk.register({
-	t = { ":tabprevious<CR>", "Previous tab" },
-}, { prefix = "[" })
-
-wk.register({
-	t = { ":tabnext<CR>", "Next tab" },
-}, { prefix = "]" })
+wk.add({
+  {
+    "[t",
+    ":tabprevious<CR>",
+    desc = "Previous tab",
+  },
+  {
+    "]t",
+    ":tabnext<CR>",
+    desc = "Next tab",
+  },
+})
