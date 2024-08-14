@@ -5,4 +5,4 @@ icons:
   # Possible values: always, auto, never
   when: never
 
-total-size: true
+# total-size: true

@@ -37,7 +37,7 @@ require("lazy").setup({
 					"williamboman/mason.nvim",
 					config = req("mason"),
 				},
-				"williamboman/mason-lspconfig.nvim",
+				-- "williamboman/mason-lspconfig.nvim",
 				{
 					"j-hui/fidget.nvim",
 					config = req("fidget"),
