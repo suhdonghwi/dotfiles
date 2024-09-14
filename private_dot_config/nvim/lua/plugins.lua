@@ -164,7 +164,7 @@ require("lazy").setup({
 
 		{ "folke/neodev.nvim", opts = {} },
 
-		{ "zbirenbaum/copilot.lua", config = req("copilot") },
+		{ "github/copilot.vim", config = req("copilot") },
 
 		{
 			"tzachar/local-highlight.nvim",
