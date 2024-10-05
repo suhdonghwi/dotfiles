@@ -3,5 +3,5 @@ return {
 	config = function()
 		require("supermaven-nvim").setup({})
 	end,
-  enabled = {{- if .assistant "supermaven" }} true, {{ else }} false, {{ end -}}
+  enabled = {{- if .assistant "supermaven" }} true, {{- else }} false, {{- end}}
 }
