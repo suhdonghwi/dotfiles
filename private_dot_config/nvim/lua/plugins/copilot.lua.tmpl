@@ -1,4 +1,4 @@
 return {
 	"github/copilot.vim",
-	enabled = false,
+	enabled = {{- if eq .assistant "copilot" }} true, {{- else }} false, {{- end }}
 }
