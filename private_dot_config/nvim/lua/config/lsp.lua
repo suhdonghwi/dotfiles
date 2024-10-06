@@ -58,6 +58,31 @@ wk.add({
 	},
 })
 
+-- Python
+local function get_python_path()
+	-- Use activated virtualenv.
+	if vim.env.VIRTUAL_ENV then
+		return util.path.join(vim.env.VIRTUAL_ENV, "bin", "python")
+	end
+
+	-- Fallback to system Python.
+	-- return exepath('python3') or exepath('python') or 'python'
+	return "python"
+end
+
+lspconfig.pyright.setup({
+	settings = {
+		python = {
+			pythonPath = "ll",
+			analysis = {
+				typeCheckingMode = "strict",
+			},
+		},
+	},
+	before_init = function(_, config)
+		config.settings.python.pythonPath = get_python_path()
+	end,
+})
 
 lspconfig.ruff_lsp.setup({
 	init_options = {
