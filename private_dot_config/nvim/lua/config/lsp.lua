@@ -78,6 +78,10 @@ lspconfig.pyright.setup({
 				typeCheckingMode = "strict",
 			},
 		},
+		pyright = {
+			-- Disable organize imports in favor of Ruff
+			disableOrganizeImports = true,
+		},
 	},
 	before_init = function(_, config)
 		config.settings.python.pythonPath = get_python_path()
@@ -90,6 +94,12 @@ lspconfig.ruff_lsp.setup({
 			args = {},
 		},
 	},
+	on_attach = function(client)
+		if client.name == "ruff_lsp" then
+			-- Disable hover in favor of Pyright
+			client.server_capabilities.hoverProvider = false
+		end
+	end,
 })
 
 -- Lua
