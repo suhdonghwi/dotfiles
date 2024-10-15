@@ -59,3 +59,9 @@ export NODE_OPTIONS=--max_old_space_size=8192
 
 
 export NODE_TLS_REJECT_UNAUTHORIZED=0
+
+tim() {
+  temp_file = $(mktemp)
+  tim_binary $(temp_file)
+  cd $(cat temp_file)
+}
