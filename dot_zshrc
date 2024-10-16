@@ -55,7 +55,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/build-tools/33.0.2
 
 # workaround for node memory issues
-export NODE_OPTIONS=--max_old_space_size=8192
+export NODE_OPTIONS=--max_old_space_size=16384
 
 
 export NODE_TLS_REJECT_UNAUTHORIZED=0
