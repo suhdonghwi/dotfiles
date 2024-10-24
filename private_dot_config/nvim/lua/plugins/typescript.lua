@@ -18,7 +18,6 @@ return {
 
 			require("tsc").setup({
 				bin_path = tsc_path,
-				flags = "--build",
 			})
 		end,
 	},
