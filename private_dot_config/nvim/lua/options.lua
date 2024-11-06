@@ -84,7 +84,7 @@ o.timeoutlen = 300
 o.termguicolors = true
 
 -- Do not let cursor to be placed on blank space
-o.virtualedit = 'none'
+o.virtualedit = "none"
 
 -- Change input source to English when leaving insert mode
 vim.api.nvim_create_autocmd("InsertLeave", { command = "call jobstart('xkbswitch -s 0')" })
@@ -122,6 +122,12 @@ end
 
 -- Format on save
 -- vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format({async = true})]])
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*",
+	callback = function(args)
+		require("conform").format({ bufnr = args.buf })
+	end,
+})
 
 -- Change cwd based on opening file path
 vim.cmd([[
