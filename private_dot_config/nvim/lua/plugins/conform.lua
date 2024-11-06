@@ -4,7 +4,7 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
-				tsx = { "prettierd" },
+				typescriptreact = { "prettierd" },
 			},
 		})
 	end,
