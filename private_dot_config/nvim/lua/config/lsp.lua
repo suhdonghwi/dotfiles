@@ -47,7 +47,7 @@ wk.add({
 	{
 		"<leader>lf",
 		function()
-      conform.format()
+			conform.format()
 		end,
 		desc = "Format buffer",
 	},
