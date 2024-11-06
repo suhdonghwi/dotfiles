@@ -4,7 +4,11 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters_by_ft = {
-				typescriptreact = { "prettierd" },
+				typescriptreact = { "prettierd", "biome" },
+        typescript = { "prettierd", "biome" },
+        javascript = { "prettierd", "biome" },
+        python = { "black" },
+        lua = { "stylua" },
 			},
 		})
 	end,

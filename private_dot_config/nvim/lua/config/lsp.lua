@@ -2,7 +2,9 @@
 require("neodev").setup({})
 
 local wk = require("which-key")
+local conform = require("conform")
 local lspconfig = require("lspconfig")
+
 local util = lspconfig.util
 
 local lsp_defaults = lspconfig.util.default_config
@@ -45,8 +47,7 @@ wk.add({
 	{
 		"<leader>lf",
 		function()
-			vim.lsp.buf.format()
-			vim.cmd(":w")
+      conform.format()
 		end,
 		desc = "Format buffer",
 	},
