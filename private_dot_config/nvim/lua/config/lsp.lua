@@ -4,7 +4,6 @@ require("neodev").setup({})
 local wk = require("which-key")
 local lspconfig = require("lspconfig")
 local util = lspconfig.util
-local null_ls = require("null-ls")
 
 local lsp_defaults = lspconfig.util.default_config
 lsp_defaults.capabilities =
@@ -137,29 +136,29 @@ require("typescript-tools").setup({
 	end,
 })
 
--- null-ls
-local command_resolver = require("null-ls.helpers.command_resolver")
-null_ls.setup({
-	debug = true,
-	sources = {
-		null_ls.builtins.formatting.prettierd.with({
-			dynamic_command = is_yarn_pnp and command_resolver.from_yarn_pnp() or nil,
-			condition = function()
-				return not is_biome
-			end,
-		}),
-
-		null_ls.builtins.formatting.biome.with({
-			condition = function()
-				return is_biome
-			end,
-		}),
-
-		null_ls.builtins.formatting.black,
-		null_ls.builtins.formatting.ocamlformat,
-		null_ls.builtins.formatting.stylua,
-	},
-})
+-- -- null-ls
+-- local command_resolver = require("null-ls.helpers.command_resolver")
+-- null_ls.setup({
+-- 	debug = true,
+-- 	sources = {
+-- 		null_ls.builtins.formatting.prettierd.with({
+-- 			dynamic_command = is_yarn_pnp and command_resolver.from_yarn_pnp() or nil,
+-- 			condition = function()
+-- 				return not is_biome
+-- 			end,
+-- 		}),
+--
+-- 		null_ls.builtins.formatting.biome.with({
+-- 			condition = function()
+-- 				return is_biome
+-- 			end,
+-- 		}),
+--
+-- 		null_ls.builtins.formatting.black,
+-- 		null_ls.builtins.formatting.ocamlformat,
+-- 		null_ls.builtins.formatting.stylua,
+-- 	},
+-- })
 
 -- HTML
 local capabilities = vim.lsp.protocol.make_client_capabilities()

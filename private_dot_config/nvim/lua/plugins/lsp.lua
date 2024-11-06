@@ -44,7 +44,4 @@ return {
 			"hrsh7th/cmp-cmdline",
 		},
 	},
-	{
-		"nvimtools/none-ls.nvim",
-	},
 }
