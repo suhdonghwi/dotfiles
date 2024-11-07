@@ -14,22 +14,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local function req(name)
-	return function()
-		require("config/" .. name)
-	end
-end
-
 require("lazy").setup("plugins", {
 	ui = {
 		border = "rounded",
-	},
-
-	spec = {
-		{
-			"akinsho/toggleterm.nvim",
-			version = "*",
-			config = req("toggleterm"),
-		},
 	},
 })
