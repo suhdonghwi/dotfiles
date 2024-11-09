@@ -122,12 +122,14 @@ end
 
 -- Format on save
 -- vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format({async = true})]])
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
-	end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+-- 	pattern = "*",
+-- 	callback = function(args)
+-- 		require("conform").format({
+-- 		  bufnr = args.buf,
+-- 		})
+-- 	end,
+-- })
 
 -- Change cwd based on opening file path
 vim.cmd([[
